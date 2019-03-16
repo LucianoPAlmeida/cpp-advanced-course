@@ -8,9 +8,11 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 
 int main(int argc, const char * argv[]) {
     
+    //
     std::vector<double> n(20, 1);
     
     std::cout << "Size: " << n.size() << std::endl;
@@ -41,6 +43,17 @@ int main(int argc, const char * argv[]) {
         }
         std::cout << std::endl;
     }
+    n.begin() + 1;
+    /// List
+    std::list<std::string> l;
+    
+    l.insert(l.begin(), "sfds");
+    l.insert(l.begin(), "sfds");
+    l.insert(l.begin(), "sfds");
+    l.insert(++l.begin(), "second");
+    l.push_back("back");
+    
+    std::for_each(l.begin(), l.end(), [](std::string s) { std::cout << s << std::endl;});
     
     return 0;
 }
