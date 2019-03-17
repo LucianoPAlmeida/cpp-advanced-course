@@ -9,6 +9,8 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <map>
+#include <set>
 
 int main(int argc, const char * argv[]) {
     
@@ -54,6 +56,31 @@ int main(int argc, const char * argv[]) {
     l.push_back("back");
     
     std::for_each(l.begin(), l.end(), [](std::string s) { std::cout << s << std::endl;});
+    
+    // Multimap
+    
+    std::multimap<int, std::string> lookup;
+    lookup.insert(std::make_pair(1, "one"));
+    lookup.insert(std::make_pair(2, "dois"));
+    lookup.insert(std::make_pair(2, "duo"));
+    lookup.insert(std::make_pair(2, "two"));
+    lookup.insert(std::make_pair(3, "three"));
+    lookup.insert(std::make_pair(4, "four"));
+    
+    auto range = lookup.equal_range(3);
+    
+    for (auto i = range.first; i != range.second; ++i)
+    {
+        std::cout << i->first << ": " << i->second << '\n';
+    }
+    
+    
+    // Set
+    std::set<int> s = {1};
+    auto inserted = s.insert(1);
+    if (inserted.second) {
+        std::cout << *inserted.first << ": " << inserted.second << std::endl;
+    }
     
     return 0;
 }
