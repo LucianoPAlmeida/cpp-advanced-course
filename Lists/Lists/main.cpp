@@ -11,6 +11,30 @@
 #include <list>
 #include <map>
 #include <set>
+#include <unordered_map>
+
+class T {
+public:
+    int i;
+    std::string s;
+    
+    T(int i, std::string s): i(i), s(s) {};
+        
+    bool operator==(const T &other) const {
+        return i == other.i && s == other.s;
+    }
+
+};
+
+struct KeyHasher {
+    std::size_t operator()(const T& k) const
+    {
+
+        return std::hash<int>()(k.i) ^ std::hash<std::string>()(k.s);
+
+    }
+};
+
 
 int main(int argc, const char * argv[]) {
     
@@ -81,6 +105,10 @@ int main(int argc, const char * argv[]) {
     if (inserted.second) {
         std::cout << *inserted.first << ": " << inserted.second << std::endl;
     }
+    
+    std::unordered_map<T, int, KeyHasher> um;
+    auto t1 = T(1, "das");
+    um.insert(std::make_pair(t1, 1));
     
     return 0;
 }
