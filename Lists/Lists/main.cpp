@@ -12,6 +12,8 @@
 #include <map>
 #include <set>
 #include <unordered_map>
+#include <stdatomic.h>
+#include <stack>
 
 class T {
 public:
@@ -94,10 +96,7 @@ int main(int argc, const char * argv[]) {
     auto range = lookup.equal_range(3);
     
     for (auto i = range.first; i != range.second; ++i)
-    {
         std::cout << i->first << ": " << i->second << '\n';
-    }
-    
     
     // Set
     std::set<int> s = {1};
@@ -110,5 +109,27 @@ int main(int argc, const char * argv[]) {
     auto t1 = T(1, "das");
     um.insert(std::make_pair(t1, 1));
     
+    // Std Atomic
+    
+    atomic_bool b;
+    atomic_load(&b);
+    atomic_store(&b, true);
+    
+    std::cout << "bool: " << b << std::endl;
+    
+    // Stack
+    std::stack<int> stk;
+    stk.push(1);
+    stk.push(2);
+    stk.pop();
+    
+    auto t = stk.top();
+    std::cout << "top" << t << std::endl;
+    stk.push(6);
+    
+    while (stk.size() > 0) {
+        std::cout << stk.top() << std::endl;
+        stk.pop();
+    }
     return 0;
 }
