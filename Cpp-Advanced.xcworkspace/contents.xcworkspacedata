@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Section8-Cpp11/Section8-Cpp11.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Slicing/Slicing.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Templates/Templates.xcodeproj">
    </FileRef>
    <FileRef
