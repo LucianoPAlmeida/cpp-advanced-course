@@ -25,18 +25,16 @@ public:
     bool operator==(const T &other) const {
         return i == other.i && s == other.s;
     }
-
 };
 
-struct KeyHasher {
-    std::size_t operator()(const T& k) const
-    {
-
+template<>
+struct std::hash<T> {
+    std::size_t operator()(const T& k) const {
+        
         return std::hash<int>()(k.i) ^ std::hash<std::string>()(k.s);
-
+        
     }
 };
-
 
 int main(int argc, const char * argv[]) {
     
@@ -105,7 +103,7 @@ int main(int argc, const char * argv[]) {
         std::cout << *inserted.first << ": " << inserted.second << std::endl;
     }
     
-    std::unordered_map<T, int, KeyHasher> um;
+    std::unordered_map<T, int> um;
     auto t1 = T(1, "das");
     um.insert(std::make_pair(t1, 1));
     
