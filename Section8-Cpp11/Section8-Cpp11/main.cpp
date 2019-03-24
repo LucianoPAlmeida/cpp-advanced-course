@@ -7,6 +7,8 @@
 //
 
 #include <iostream>
+#include "ring.h"
+
 template <class T, class S>
 auto test(T value, S other) -> decltype(value + other) {
     return value + other;
@@ -30,6 +32,19 @@ int main(int argc, const char * argv[]) {
     
     for (auto text : texts) {
         std::cout << text << std::endl;
+    }
+    
+    // S08 L42 Nested Template Classes
+    ring<std::string> t(3);
+    
+    t.add("one");
+    t.add("two");
+    t.add("three");
+    t.add("four");
+    
+    std::cout << "Ring" << std::endl;
+    for (int i = 0; i < t.size(); i++) {
+        std::cout << t.get(i) << std::endl;
     }
     
     return 0;
