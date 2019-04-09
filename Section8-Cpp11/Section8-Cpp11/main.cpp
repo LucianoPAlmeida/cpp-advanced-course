@@ -7,6 +7,9 @@
 //
 
 #include <iostream>
+#include <vector>
+#include <functional>
+#include <algorithm>
 #include "ring.h"
 
 template <class T, class S>
@@ -109,5 +112,32 @@ int main(int argc, const char * argv[]) {
     C c;
     c.run();
     
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    
+    auto count = std::count_if(numbers.begin(), numbers.end(), [](int i) { return i%2 == 0; });
+    
+    std::cout << "count_if: " << count << std::endl;
+    
+    std::function<long(std::string)> f = [](std::string s) { return s.size(); };
+    
+    std::vector<std::string> sv = {"1" , "22", "333" };
+    std::vector<long> rv;
+    rv.resize(sv.size());
+
+    std::transform(sv.begin(), sv.end(), rv.begin(), f);
+    
+    for (auto n : rv) {
+        std::cout << "t: " << n << std::endl;
+    }
+    
+    int ii = 0;
+    auto ml = [ii]() mutable {
+        ii = 1;
+        std::cout << "Inside ii: " << ii << std::endl;
+    };
+
+    ml();
+    std::cout << "Outside ii: " << ii << std::endl;
+
     return 0;
 }
