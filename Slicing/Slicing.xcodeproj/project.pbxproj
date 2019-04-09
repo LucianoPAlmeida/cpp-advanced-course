@@ -102,6 +102,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B2BEC16722480E39007D2BB2;
 			productRefGroup = B2BEC17122480E39007D2BB2 /* Products */;
