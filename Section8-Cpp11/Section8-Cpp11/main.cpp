@@ -14,6 +14,21 @@ auto test(T value, S other) -> decltype(value + other) {
     return value + other;
 }
 
+class C {
+public:
+    int a = 0;
+    int b = 1;
+    
+    void run() {
+        auto l = [this]() {
+            a = -1;
+            std::cout << "a: " << a << std::endl;
+            std::cout << "b: " << b << std::endl;
+        };
+        l();
+    }
+};
+
 int main(int argc, const char * argv[]) {
     // S08 L39 Decltype, typeid and name mangling.
     std::string s;
@@ -78,5 +93,21 @@ int main(int argc, const char * argv[]) {
     
     std::cout << "I: " << i << std::endl;
 
+    // Functors
+    int a1[4] = {1, 2, 3, 4};
+    int a2[4] = {4, 3, 2, 1};
+
+    int n = 4;
+    int r[n];
+
+    std::transform(a1, a1 + n, a2, r, std::minus<int>());
+    
+    for (int i = 0; i < n; i++) {
+        std::cout << i << ": " << r[i] << std::endl;
+    }
+    
+    C c;
+    c.run();
+    
     return 0;
 }
