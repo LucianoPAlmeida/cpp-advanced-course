@@ -63,7 +63,7 @@ int main(int argc, const char * argv[]) {
     v.push_back("one");
 
 //    auto count = count_if(v.begin(), v.end(), matches); // Our custom count_if
-    auto count = std::count_if(v.begin(), v.end(), matches);
+    auto count = count_if(v.begin(), v.end(), matches);
 
     std::cout << "Count: " << count << std::endl;
     

@@ -47,5 +47,36 @@ int main(int argc, const char * argv[]) {
         std::cout << t.get(i) << std::endl;
     }
     
+    // Anonymous struct
+    struct {
+        int i;
+        std::string s;
+    } s1 {1, ""};
+    
+    std::cout << s1.i << std::endl;
+    
+    
+    //Lambdas
+    
+    auto l = [](std::string s) { std::cout << "Inside: " << s << std::endl; };
+    l("dsad");
+    
+    auto l1 = [](decltype(i) s) { std::cout << "Inside template: " << s << std::endl; };
+    l1(1);
+    
+    std::string str;
+    
+//  [=, &i] the default is value and i is by ref.
+//  [&, i]  the default is ref and i is by value.
+    
+    auto l2 = [&]() { // all captured by reference
+        i = 1000;
+        std::cout << "Inside template: " << i << std::endl;
+    };
+    
+    l2();
+    
+    std::cout << "I: " << i << std::endl;
+
     return 0;
 }
