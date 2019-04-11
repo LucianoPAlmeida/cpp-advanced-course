@@ -17,6 +17,8 @@ auto test(T value, S other) -> decltype(value + other) {
     return value + other;
 }
 
+
+
 class C {
 public:
     int a = 0;
@@ -31,6 +33,19 @@ public:
         l();
     }
 };
+
+C getC() {
+    return C();
+}
+
+template <typename T>
+void check(const T& l) {
+    std::cout << "lvalue ref" << std::endl;
+}
+template <typename T>
+void check(const T&& l) {
+    std::cout << "rvalue ref" << std::endl;
+}
 
 int main(int argc, const char * argv[]) {
     // S08 L39 Decltype, typeid and name mangling.
@@ -139,5 +154,18 @@ int main(int argc, const char * argv[]) {
     ml();
     std::cout << "Outside ii: " << ii << std::endl;
 
+    //LValues and RValues
+    // Binding RValue refs.
+    int it = 0;
+    C cc;
+    const C& q = getC();
+    C&& m = getC();
+    int&& aa = 7;
+    // C& q = getC(); gives error.
+    check(getC());
+    check(cc);
+    check(i++);
+    check(++i);
+    
     return 0;
 }
