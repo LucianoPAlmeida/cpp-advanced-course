@@ -13,6 +13,9 @@
 
 int main(int argc, const char * argv[]) {
    
+    bitmap::Bitmap bm(800, 600);
+    
+    bm.writeToFile("bitmap_file.bmp");
     
     return 0;
 }

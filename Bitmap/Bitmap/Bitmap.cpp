@@ -7,8 +7,8 @@
 //
 
 #include "Bitmap.hpp"
-#include "BitmapInfoHeader.h"
-#include "BitmapHeaderFile.h"
+#include <iostream>
+#include <fstream>
 
 namespace bitmap {
     
@@ -34,8 +34,18 @@ namespace bitmap {
         infoHeader.m_height = m_height;
         infoHeader.m_width = m_width;
         
-        
-        
+        return writeToFile(filename, infoHeader, headerFile);
+    }
+    
+    bool Bitmap::writeToFile(std::string filename, BitmapInfoHeader infoHeader, BitmapHeaderFile headerFile) {
+        std::fstream f;
+        f.open(filename, std::ios::out|std::ios::binary);
+        if (f.is_open()) {
+            f.write(reinterpret_cast<char*>(&headerFile), sizeof(headerFile));
+            f.write(reinterpret_cast<char*>(&infoHeader), sizeof(infoHeader));
+            f.write(reinterpret_cast<char*>(m_pPixels.get()), getSize());
+            f.close();
+        }
         return false;
     }
     

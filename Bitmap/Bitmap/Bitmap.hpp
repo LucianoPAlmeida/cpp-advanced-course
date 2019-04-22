@@ -11,14 +11,20 @@
 
 #include <stdio.h>
 #include <iostream>
+#include "BitmapInfoHeader.h"
+#include "BitmapHeaderFile.h"
 
 namespace bitmap {
 class Bitmap {
 private:
+    // Members
     int m_height{0};
     int m_width{0};
     std::unique_ptr<uint8_t[]> m_pPixels{nullptr};
+    
+    // Methods
     int getSize() const;
+    bool writeToFile(std::string filename, BitmapInfoHeader infoHeader, BitmapHeaderFile headerFile);
 public:
     Bitmap(int height, int width);
     bool writeToFile(std::string filename);
