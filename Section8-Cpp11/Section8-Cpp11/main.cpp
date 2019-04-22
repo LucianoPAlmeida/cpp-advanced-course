@@ -10,6 +10,7 @@
 #include <vector>
 #include <functional>
 #include <algorithm>
+#include <memory>
 #include "ring.h"
 
 template <class T, class S>
@@ -38,6 +39,7 @@ C getC() {
     return C();
 }
 
+
 template <typename T>
 void check(const T& l) {
     std::cout << "lvalue ref" << std::endl;
@@ -45,6 +47,16 @@ void check(const T& l) {
 template <typename T>
 void check(const T&& l) {
     std::cout << "rvalue ref" << std::endl;
+}
+
+
+template <typename T>
+void call(T && ref) {
+    check(static_cast<T>(ref));
+}
+
+int add(int a, int b) {
+    return a + b;
 }
 
 int main(int argc, const char * argv[]) {
@@ -167,5 +179,26 @@ int main(int argc, const char * argv[]) {
     check(i++);
     check(++i);
     
+    std::cout << "===============" << std::endl;
+    // Perfect Forward
+    C test1;
+    auto && test = test1; // Auto colapses here.
+    call(C());
+    call(test);
+    
+    // Bind - Bind allows us to create aliases to functions. Very alike function pointers.
+    
+    auto alias = std::bind(add, 1, 2);
+    auto p_alias = std::bind(add, std::placeholders::_1, std::placeholders::_2);
+
+    
+    std::cout << "alias: " << alias() << std::endl;
+    std::cout << "p_alias: " << p_alias(2, 2) << std::endl;
+    
+    // unique_pointer
+    // smart pointers
+    
+    std::unique_ptr<C> pc(new C);
+
     return 0;
 }
