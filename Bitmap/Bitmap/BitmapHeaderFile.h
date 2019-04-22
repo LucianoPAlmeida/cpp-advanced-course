@@ -10,6 +10,7 @@
 #define BitmapHeaderFile_h
 
 #include <iostream>
+namespace bitmap {
 
 #pragma pack(2)
 struct BitmapHeaderFile {
@@ -19,5 +20,6 @@ struct BitmapHeaderFile {
     int32_t m_data_offset;
     
 };
+}
 #pragma pack()
 #endif /* BitmapHeaderFile_h */

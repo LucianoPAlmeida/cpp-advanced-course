@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B22B28DC226D42EB0072E722 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28DB226D42EB0072E722 /* main.cpp */; };
+		B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28E4226D4A0A0072E722 /* Bitmap.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,8 @@
 		B22B28DB226D42EB0072E722 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B22B28E2226D436A0072E722 /* BitmapHeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapHeaderFile.h; sourceTree = "<group>"; };
 		B22B28E3226D47160072E722 /* BitmapInfoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapInfoHeader.h; sourceTree = "<group>"; };
+		B22B28E4226D4A0A0072E722 /* Bitmap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		B22B28E5226D4A0A0072E722 /* Bitmap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bitmap.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				B22B28DB226D42EB0072E722 /* main.cpp */,
 				B22B28E2226D436A0072E722 /* BitmapHeaderFile.h */,
 				B22B28E3226D47160072E722 /* BitmapInfoHeader.h */,
+				B22B28E4226D4A0A0072E722 /* Bitmap.cpp */,
+				B22B28E5226D4A0A0072E722 /* Bitmap.hpp */,
 			);
 			path = Bitmap;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */,
 				B22B28DC226D42EB0072E722 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

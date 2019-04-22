@@ -10,7 +10,8 @@
 #define BitmapInfoHeader_h
 
 #include <iostream>
-
+namespace bitmap {
+    
 #pragma pack(2)
 struct BitmapInfoHeader {
     int32_t m_header_size{40};
@@ -25,5 +26,6 @@ struct BitmapInfoHeader {
     int32_t m_colors{0};
     int32_t m_importantColors{0};
 };
+}
 #pragma pack()
 #endif /* BitmapInfoHeader_h */

@@ -9,6 +9,7 @@
 #include <iostream>
 #include "BitmapHeaderFile.h"
 #include "BitmapInfoHeader.h"
+#include "Bitmap.hpp"
 
 int main(int argc, const char * argv[]) {
    
