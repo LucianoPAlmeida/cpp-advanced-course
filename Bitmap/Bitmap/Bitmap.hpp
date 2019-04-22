@@ -18,6 +18,7 @@ private:
     int m_height{0};
     int m_width{0};
     std::unique_ptr<uint8_t[]> m_pPixels{nullptr};
+    int getSize() const;
 public:
     Bitmap(int height, int width);
     bool writeToFile(std::string filename);
