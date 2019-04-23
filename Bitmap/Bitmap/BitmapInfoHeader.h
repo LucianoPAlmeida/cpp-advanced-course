@@ -15,8 +15,8 @@ namespace bitmap {
 #pragma pack(2)
 struct BitmapInfoHeader {
     int32_t m_header_size{40};
-    int32_t m_height;
     int32_t m_width;
+    int32_t m_height;
     int16_t m_planes{1};
     int16_t m_bitsPerPixel{24};
     int32_t m_compression{0};
