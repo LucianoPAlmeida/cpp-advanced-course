@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B22B28DC226D42EB0072E722 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28DB226D42EB0072E722 /* main.cpp */; };
 		B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28E4226D4A0A0072E722 /* Bitmap.cpp */; };
+		B22B28EE227157060072E722 /* Mandelbrot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28EC227157050072E722 /* Mandelbrot.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,8 @@
 		B22B28E3226D47160072E722 /* BitmapInfoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapInfoHeader.h; sourceTree = "<group>"; };
 		B22B28E4226D4A0A0072E722 /* Bitmap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
 		B22B28E5226D4A0A0072E722 /* Bitmap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bitmap.hpp; sourceTree = "<group>"; };
+		B22B28EC227157050072E722 /* Mandelbrot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mandelbrot.cpp; sourceTree = "<group>"; };
+		B22B28ED227157050072E722 /* Mandelbrot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mandelbrot.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				B22B28E3226D47160072E722 /* BitmapInfoHeader.h */,
 				B22B28E4226D4A0A0072E722 /* Bitmap.cpp */,
 				B22B28E5226D4A0A0072E722 /* Bitmap.hpp */,
+				B22B28EC227157050072E722 /* Mandelbrot.cpp */,
+				B22B28ED227157050072E722 /* Mandelbrot.hpp */,
 			);
 			path = Bitmap;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22B28EE227157060072E722 /* Mandelbrot.cpp in Sources */,
 				B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */,
 				B22B28DC226D42EB0072E722 /* main.cpp in Sources */,
 			);
