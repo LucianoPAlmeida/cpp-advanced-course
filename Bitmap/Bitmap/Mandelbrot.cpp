@@ -26,4 +26,8 @@ namespace fractal {
         }
         return iterations;
     }
+    
+    double Mandelbrot::scaleCoordinate(int value, int scale) {
+        return (value - scale/2.0) * (4.0/scale);
+    }
 }

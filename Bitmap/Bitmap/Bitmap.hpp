@@ -29,6 +29,7 @@ public:
     Bitmap(int height, int width);
     bool writeToFile(std::string filename);
     void setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue);
+    void forEachCoordinate(std::function<void (int, int)> fn);
     virtual ~Bitmap();
 };
 }

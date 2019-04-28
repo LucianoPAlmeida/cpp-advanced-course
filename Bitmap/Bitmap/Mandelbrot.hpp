@@ -15,11 +15,10 @@ namespace fractal {
 class Mandelbrot {
 private:
     int m_maxIterations;
-    int m_beginScale;
-    int m_endScale;
 public:
     Mandelbrot(int maxIterations);
     int computeIterations(double x, double y);
+    static double scaleCoordinate(int value, int scale);
     virtual ~Mandelbrot();
 };
     
