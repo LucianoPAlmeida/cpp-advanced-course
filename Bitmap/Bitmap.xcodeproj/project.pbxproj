@@ -11,6 +11,8 @@
 		B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28E4226D4A0A0072E722 /* Bitmap.cpp */; };
 		B22B28EE227157060072E722 /* Mandelbrot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28EC227157050072E722 /* Mandelbrot.cpp */; };
 		B22B28F22275F26C0072E722 /* Histogram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28F02275F26C0072E722 /* Histogram.cpp */; };
+		B22B28F52276042D0072E722 /* ColorApplier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28F32276042D0072E722 /* ColorApplier.cpp */; };
+		B22B28F8227608D70072E722 /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28F6227608D70072E722 /* Coordinate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +38,10 @@
 		B22B28ED227157050072E722 /* Mandelbrot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mandelbrot.hpp; sourceTree = "<group>"; };
 		B22B28F02275F26C0072E722 /* Histogram.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Histogram.cpp; sourceTree = "<group>"; };
 		B22B28F12275F26C0072E722 /* Histogram.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Histogram.hpp; sourceTree = "<group>"; };
+		B22B28F32276042D0072E722 /* ColorApplier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ColorApplier.cpp; sourceTree = "<group>"; };
+		B22B28F42276042D0072E722 /* ColorApplier.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColorApplier.hpp; sourceTree = "<group>"; };
+		B22B28F6227608D70072E722 /* Coordinate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate.cpp; sourceTree = "<group>"; };
+		B22B28F7227608D70072E722 /* Coordinate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Coordinate.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,10 @@
 				B22B28ED227157050072E722 /* Mandelbrot.hpp */,
 				B22B28F02275F26C0072E722 /* Histogram.cpp */,
 				B22B28F12275F26C0072E722 /* Histogram.hpp */,
+				B22B28F32276042D0072E722 /* ColorApplier.cpp */,
+				B22B28F42276042D0072E722 /* ColorApplier.hpp */,
+				B22B28F6227608D70072E722 /* Coordinate.cpp */,
+				B22B28F7227608D70072E722 /* Coordinate.hpp */,
 			);
 			path = Bitmap;
 			sourceTree = "<group>";
@@ -138,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22B28F22275F26C0072E722 /* Histogram.cpp in Sources */,
+				B22B28F8227608D70072E722 /* Coordinate.cpp in Sources */,
+				B22B28F52276042D0072E722 /* ColorApplier.cpp in Sources */,
 				B22B28EE227157060072E722 /* Mandelbrot.cpp in Sources */,
 				B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */,
 				B22B28DC226D42EB0072E722 /* main.cpp in Sources */,

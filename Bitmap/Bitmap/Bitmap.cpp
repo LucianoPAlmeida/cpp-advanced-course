@@ -55,10 +55,10 @@ namespace bitmap {
         return false;
     }
     
-    void Bitmap::forEachCoordinate(std::function<void (int, int)> fn) {
+    void Bitmap::forEachCoordinate(std::function<void (Coordinate)> fn) {
         for (int x = 0; x < m_width; ++x) {
             for (int y = 0; y < m_height; ++y) {
-                fn(x, y);
+                fn(Coordinate(x, y));
             }
         }
         

@@ -20,7 +20,10 @@ namespace fractal {
         int m_size;
     public:
         Histogram(int size);
+        int& operator[] (const int index);
         void incrementValueFor(int iteration);
+        int total(int maxIterations) const;
+        double hue(int total, int interations) const;
         virtual ~Histogram();
     };
 };
