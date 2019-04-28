@@ -46,15 +46,17 @@ void mandelbrot() {
     
     fractal::ZoomList zooms(WIDTH, HEIGHT);
     zooms.add(fractal::Zoom(WIDTH/2, HEIGHT/2, 2.0/WIDTH));
-    zooms.add(fractal::Zoom(200, HEIGHT - 200, 0.4));
+    zooms.add(fractal::Zoom(295, HEIGHT - 200, 0.1));
+    zooms.add(fractal::Zoom(312, HEIGHT - 304, 0.1));
 
     bm.forEachCoordinate([&](bitmap::Coordinate c) {
 //        double xFractal = fractal::Mandelbrot::scaleCoordinate(c.x, WIDTH);
 //        double yFractal = fractal::Mandelbrot::scaleCoordinate(c.y, HEIGHT);
-        std::pair<double, double> coords = zooms.toZoom(c);
-        
-        int iterations = m.computeIterations(coords.first, coords.second);
 //        int iterations = m.computeIterations(xFractal, yFractal);
+
+        std::pair<double, double> coords = zooms.toZoom(c);
+        int iterations = m.computeIterations(coords.first, coords.second);
+        
         iterationsMap.insert(std::make_pair(bitmap::Coordinate(c.x, c.y), iterations));
         histogram.incrementValueFor(iterations);
     });
