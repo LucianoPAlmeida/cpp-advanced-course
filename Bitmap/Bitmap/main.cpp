@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
         }
     }
     
-    bm.writeToFile("bitmap_file.bmp");
+    bm.writeToFile("mandelbrot.bmp");
     
 //  Desenha uma bola moiséis
     const int RADIUS = 300;
