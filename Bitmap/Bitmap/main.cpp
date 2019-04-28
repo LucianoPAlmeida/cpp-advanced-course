@@ -18,9 +18,22 @@
 #include "Coordinate.hpp"
 #include "ColorApplier.hpp"
 
+void mandelbrot();
+void desenhaUmaBolaMoiseis();
+
 int main(int argc, const char * argv[]) {
-    const int WIDTH = 2160;
-    const int HEIGHT = 2160;
+    // Mandelbrot bitmap.
+    mandelbrot();
+    
+    // Desenhando uma bola.
+    desenhaUmaBolaMoiseis();
+
+    return 0;
+}
+
+void mandelbrot() {
+    const int WIDTH = 1000;
+    const int HEIGHT = 1000;
     const int MAX_ITERATIONS = 1000;
     
     bitmap::Bitmap bm(HEIGHT, WIDTH);
@@ -41,11 +54,14 @@ int main(int argc, const char * argv[]) {
     
     bm.writeToFile("mandelbrot.bmp");
     
-//  Desenha uma bola moiséis
+}
+
+void desenhaUmaBolaMoiseis() {
+    //  Desenha uma bola moiséis
     const int RADIUS = 300;
     bitmap::Bitmap bola(RADIUS * 2, RADIUS * 2);
-
-//  Num consegue né moiséis haha
+    
+    //  Num consegue né moiséis haha
     for (int i = 0; i < 360; ++i) {
         int y = (cos(M_PI * i /180) * RADIUS) + RADIUS;
         int x = (sin(M_PI * i /180) * RADIUS) + RADIUS;
@@ -54,5 +70,4 @@ int main(int argc, const char * argv[]) {
     
     bola.writeToFile("desenha_uma_bola.bmp");
     
-    return 0;
 }
