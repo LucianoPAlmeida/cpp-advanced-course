@@ -17,6 +17,10 @@ namespace bitmap {
         u_int8_t blue{0};
         RGB() {}
         RGB(u_int8_t red, u_int8_t green, u_int8_t blue): red(red), green(green), blue(blue) {}
+        
     };
+    
+    RGB operator-(const RGB& rgb, const RGB& other);
+
 }
 #endif /* RGB_hpp */

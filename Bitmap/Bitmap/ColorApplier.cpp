@@ -9,14 +9,21 @@
 #include "ColorApplier.hpp"
 
 void ColorApplier::applyTo(bitmap::Bitmap &bitmap, fractal::Histogram &histogram, std::unordered_map<bitmap::Coordinate, int> iterationsMap, int maxIterations) {
+    bitmap::RGB startColor(10, 0, 80);
+    bitmap::RGB endColor(15, 255, 100);
+    bitmap::RGB colorDiff = endColor - startColor;
+    
     int total = histogram.total(maxIterations);
     bitmap.forEachCoordinate([&](bitmap::Coordinate c) {
         int it = iterationsMap[c];
         if (it == maxIterations) {
-            bitmap.setPixel(c.x, c.y, bitmap::RGB());
+            bitmap.setPixel(c.x, c.y, bitmap::RGB(255, 255, 255));
         } else {
             double hue = histogram.hue(total, it);
-            bitmap.setPixel(c.x, c.y, bitmap::RGB(0, pow(255, hue), 0));
+            uint8_t red = startColor.red + colorDiff.red * hue;
+            uint8_t green = startColor.green + colorDiff.green * hue;
+            uint8_t blue = startColor.blue + colorDiff.blue * hue;
+            bitmap.setPixel(c.x, c.y, bitmap::RGB(red, green, blue));
         }
     });
 }

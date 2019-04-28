@@ -7,3 +7,8 @@
 //
 
 #include "RGB.hpp"
+namespace bitmap {
+    RGB operator-(const RGB &rgb, const RGB &other) {
+        return RGB(rgb.red - other.red, rgb.green - other.green, rgb.blue - other.blue);
+    }
+}
