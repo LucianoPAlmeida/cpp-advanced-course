@@ -11,38 +11,40 @@
 #include "BitmapHeaderFile.h"
 #include "BitmapInfoHeader.h"
 #include "Bitmap.hpp"
+#include "Mandelbrot.hpp"
 
 int main(int argc, const char * argv[]) {
-    const int WIDTH = 600;
-    const int HEIGHT = 600;
-//    const int RADIUS = 300;
-
-    bitmap::Bitmap bm(WIDTH, HEIGHT);
+    const int WIDTH = 3840;
+    const int HEIGHT = 2160;
     
-//  Desenha uma bola... num consegue né moiséis 
-//    for (int i = 0; i < 360; ++i) {
-//        int y = (cos(M_PI * i /180) * RADIUS) + RADIUS;
-//        int x = (sin(M_PI * i /180) * RADIUS) + RADIUS;
-//        bm.setPixel(x, y, 255, 255, 255);
-//    }
+    bitmap::Bitmap bm(HEIGHT, WIDTH);
+    fractal::Mandelbrot m(1000);
     
-    double min = std::numeric_limits<double>().max();
-    double max = std::numeric_limits<double>().min();
-    
-    for (int x = 0; x < HEIGHT; ++x) {
-        for (int y = 0; y < WIDTH; ++y) {
-            double xFractal = (x - WIDTH/2) * (2.0/WIDTH);
-            double yFractal = (y - HEIGHT/2) * (2.0/HEIGHT);
+    for (int x = 0; x < WIDTH; ++x) {
+        for (int y = 0; y < HEIGHT; ++y) {
+            double xFractal = (x - WIDTH/2.0) * (4.0/WIDTH);
+            double yFractal = (y - HEIGHT/2.0) * (4.0/HEIGHT);
             
-            min = std::min(min, xFractal);
-            max = std::max(max, xFractal);
+            int iterations = m.computeIterations(xFractal, yFractal);
+            bm.setPixel(x,y, (iterations >> 16) & 255, (iterations >> 8) & 255, iterations & 255);
             
         }
     }
     
-    std::cout << "min: " << min << ", max: " << max << std::endl;
-    
     bm.writeToFile("bitmap_file.bmp");
+    
+//  Desenha uma bola moiséis
+    const int RADIUS = 300;
+    bitmap::Bitmap bola(RADIUS, RADIUS);
+
+//  Num consegue né moiséis haha
+    for (int i = 0; i < 360; ++i) {
+        int y = (cos(M_PI * i /180) * RADIUS) + RADIUS;
+        int x = (sin(M_PI * i /180) * RADIUS) + RADIUS;
+        bola.setPixel(x, y, 255, 255, 255);
+    }
+    
+    bola.writeToFile("desenha_uma_bola.bmp");
     
     return 0;
 }

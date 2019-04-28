@@ -15,6 +15,8 @@ namespace fractal {
 class Mandelbrot {
 private:
     int m_maxIterations;
+    int m_beginScale;
+    int m_endScale;
 public:
     Mandelbrot(int maxIterations);
     int computeIterations(double x, double y);

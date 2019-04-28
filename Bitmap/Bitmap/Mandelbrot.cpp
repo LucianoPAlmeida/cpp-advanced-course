@@ -12,12 +12,18 @@
 
 namespace fractal {
     Mandelbrot::Mandelbrot(int maxIterations): m_maxIterations(maxIterations) {
-        
     }
     
     Mandelbrot::~Mandelbrot() {}
     
-    int Mandelbrot::computeIterations(double x, double y) {
-        return 0;
+    int Mandelbrot::computeIterations(double xf, double yf) {
+        int iterations = 0;
+        std::complex<double> c(xf, yf);
+        std::complex<double> z(0, 0);
+        while (abs(z) < 2 && iterations < m_maxIterations) {
+            z = z * z + c;
+            iterations++;
+        }
+        return iterations;
     }
 }
