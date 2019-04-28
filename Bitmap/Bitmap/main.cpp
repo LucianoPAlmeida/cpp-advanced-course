@@ -17,6 +17,7 @@
 #include "Histogram.hpp"
 #include "Coordinate.hpp"
 #include "ColorApplier.hpp"
+#include "Zoom.hpp"
 
 void mandelbrot();
 void desenhaUmaBolaMoiseis();

@@ -28,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B2122021227625F300462294 /* Zoom.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Zoom.hpp; sourceTree = "<group>"; };
 		B22B28D8226D42EB0072E722 /* Bitmap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bitmap; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22B28DB226D42EB0072E722 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B22B28E2226D436A0072E722 /* BitmapHeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapHeaderFile.h; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 				B22B28F42276042D0072E722 /* ColorApplier.hpp */,
 				B22B28F6227608D70072E722 /* Coordinate.cpp */,
 				B22B28F7227608D70072E722 /* Coordinate.hpp */,
+				B2122021227625F300462294 /* Zoom.hpp */,
 			);
 			path = Bitmap;
 			sourceTree = "<group>";
