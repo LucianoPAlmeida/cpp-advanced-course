@@ -10,7 +10,7 @@
 
 void ColorApplier::applyTo(bitmap::Bitmap &bitmap, fractal::Histogram &histogram, std::unordered_map<bitmap::Coordinate, int> iterationsMap, int maxIterations) {
     bitmap::RGB startColor(10, 0, 80);
-    bitmap::RGB endColor(15, 255, 100);
+    bitmap::RGB endColor(200, 255, 100);
     bitmap::RGB colorDiff = endColor - startColor;
     
     int total = histogram.total(maxIterations);

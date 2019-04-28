@@ -47,7 +47,7 @@ void mandelbrot() {
     fractal::ZoomList zooms(WIDTH, HEIGHT);
     zooms.add(fractal::Zoom(WIDTH/2, HEIGHT/2, 2.0/WIDTH));
     zooms.add(fractal::Zoom(295, HEIGHT - 200, 0.1));
-    zooms.add(fractal::Zoom(312, HEIGHT - 304, 0.1));
+    zooms.add(fractal::Zoom(200, HEIGHT - 304, 0.1));
 
     bm.forEachCoordinate([&](bitmap::Coordinate c) {
 //        double xFractal = fractal::Mandelbrot::scaleCoordinate(c.x, WIDTH);
