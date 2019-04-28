@@ -18,16 +18,15 @@ namespace bitmap {
         return m_width * m_height * BYTES_PER_PIXEL;
     }
     
-    Bitmap::Bitmap(int height, int width): m_height(height), m_width(width), m_pPixels(new uint8_t[getSize()]) {
-    }
+    Bitmap::Bitmap(int height, int width): m_height(height), m_width(width), m_pPixels(new uint8_t[getSize()]{0}){}
 
-    void Bitmap::setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue) {
+    void Bitmap::setPixel(int x, int y, RGB rgb) {
         auto pixels = m_pPixels.get();
         auto pixelOffset = (y * BYTES_PER_PIXEL) * m_width + (x * BYTES_PER_PIXEL);
         
-        pixels[pixelOffset] = blue;
-        pixels[pixelOffset + 1] = green;
-        pixels[pixelOffset + 2] = red;
+        pixels[pixelOffset] = rgb.blue;
+        pixels[pixelOffset + 1] = rgb.green;
+        pixels[pixelOffset + 2] = rgb.red;
     }
     
     bool Bitmap::writeToFile(std::string filename) {

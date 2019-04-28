@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B212202422762C5C00462294 /* Zoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B212202322762C5C00462294 /* Zoom.cpp */; };
+		B212202722763F7700462294 /* RGB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B212202522763F7700462294 /* RGB.cpp */; };
 		B22B28DC226D42EB0072E722 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28DB226D42EB0072E722 /* main.cpp */; };
 		B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28E4226D4A0A0072E722 /* Bitmap.cpp */; };
 		B22B28EE227157060072E722 /* Mandelbrot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B22B28EC227157050072E722 /* Mandelbrot.cpp */; };
@@ -29,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		B2122021227625F300462294 /* Zoom.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Zoom.hpp; sourceTree = "<group>"; };
+		B212202322762C5C00462294 /* Zoom.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Zoom.cpp; sourceTree = "<group>"; };
+		B212202522763F7700462294 /* RGB.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RGB.cpp; sourceTree = "<group>"; };
+		B212202622763F7700462294 /* RGB.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RGB.hpp; sourceTree = "<group>"; };
 		B22B28D8226D42EB0072E722 /* Bitmap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bitmap; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22B28DB226D42EB0072E722 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B22B28E2226D436A0072E722 /* BitmapHeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapHeaderFile.h; sourceTree = "<group>"; };
@@ -89,6 +94,9 @@
 				B22B28F6227608D70072E722 /* Coordinate.cpp */,
 				B22B28F7227608D70072E722 /* Coordinate.hpp */,
 				B2122021227625F300462294 /* Zoom.hpp */,
+				B212202322762C5C00462294 /* Zoom.cpp */,
+				B212202522763F7700462294 /* RGB.cpp */,
+				B212202622763F7700462294 /* RGB.hpp */,
 			);
 			path = Bitmap;
 			sourceTree = "<group>";
@@ -151,6 +159,8 @@
 			files = (
 				B22B28F22275F26C0072E722 /* Histogram.cpp in Sources */,
 				B22B28F8227608D70072E722 /* Coordinate.cpp in Sources */,
+				B212202422762C5C00462294 /* Zoom.cpp in Sources */,
+				B212202722763F7700462294 /* RGB.cpp in Sources */,
 				B22B28F52276042D0072E722 /* ColorApplier.cpp in Sources */,
 				B22B28EE227157060072E722 /* Mandelbrot.cpp in Sources */,
 				B22B28E6226D4A0A0072E722 /* Bitmap.cpp in Sources */,

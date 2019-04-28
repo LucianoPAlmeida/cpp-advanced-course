@@ -18,7 +18,6 @@ namespace bitmap {
         int y{0};
         Coordinate(int x, int y): x(x), y(y) {}
         bool operator==(const Coordinate &other) const;
-        
     };
 }
 

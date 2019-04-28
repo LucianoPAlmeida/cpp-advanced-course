@@ -15,6 +15,7 @@
 #include "Bitmap.hpp"
 #include "Histogram.hpp"
 #include "Coordinate.hpp"
+#include "RGB.hpp"
 
 class ColorApplier {
 public:

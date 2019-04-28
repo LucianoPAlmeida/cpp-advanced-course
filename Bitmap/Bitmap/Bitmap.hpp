@@ -13,6 +13,7 @@
 #include <iostream>
 #include "BitmapInfoHeader.h"
 #include "BitmapHeaderFile.h"
+#include "RGB.hpp"
 #include "Coordinate.hpp"
 
 namespace bitmap {
@@ -29,7 +30,7 @@ private:
 public:
     Bitmap(int height, int width);
     bool writeToFile(std::string filename);
-    void setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue);
+    void setPixel(int x, int y, RGB rgb);
     void forEachCoordinate(std::function<void (Coordinate)> fn);
     virtual ~Bitmap();
 };

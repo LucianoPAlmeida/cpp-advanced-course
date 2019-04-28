@@ -13,10 +13,10 @@ void ColorApplier::applyTo(bitmap::Bitmap &bitmap, fractal::Histogram &histogram
     bitmap.forEachCoordinate([&](bitmap::Coordinate c) {
         int it = iterationsMap[c];
         if (it == maxIterations) {
-            bitmap.setPixel(c.x, c.y, 0, 0, 0);
+            bitmap.setPixel(c.x, c.y, bitmap::RGB());
         } else {
             double hue = histogram.hue(total, it);
-            bitmap.setPixel(c.x, c.y, 0, pow(255, hue), 0);
+            bitmap.setPixel(c.x, c.y, bitmap::RGB(0, pow(255, hue), 0));
         }
     });
 }

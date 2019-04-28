@@ -19,6 +19,7 @@
 #include "ColorApplier.hpp"
 #include "Zoom.hpp"
 
+
 void mandelbrot();
 void desenhaUmaBolaMoiseis();
 
@@ -33,8 +34,8 @@ int main(int argc, const char * argv[]) {
 }
 
 void mandelbrot() {
-    const int WIDTH = 1000;
-    const int HEIGHT = 1000;
+    const int WIDTH = 600;
+    const int HEIGHT = 600;
     const int MAX_ITERATIONS = 1000;
     
     bitmap::Bitmap bm(HEIGHT, WIDTH);
@@ -42,11 +43,17 @@ void mandelbrot() {
     fractal::Histogram histogram(MAX_ITERATIONS);
     std::unordered_map<bitmap::Coordinate, int> iterationsMap;
     
+    fractal::ZoomList zooms(WIDTH, HEIGHT);
+    zooms.add(fractal::Zoom(WIDTH/2, HEIGHT/2, 4.0/WIDTH));
+    zooms.add(fractal::Zoom(295, HEIGHT - 200, 0.1));
+    zooms.add(fractal::Zoom(312, HEIGHT - 304, 0.1));
+
     bm.forEachCoordinate([&](bitmap::Coordinate c) {
-        double xFractal = fractal::Mandelbrot::scaleCoordinate(c.x, WIDTH);
-        double yFractal = fractal::Mandelbrot::scaleCoordinate(c.y, HEIGHT);
+//        double xFractal = fractal::Mandelbrot::scaleCoordinate(c.x, WIDTH);
+//        double yFractal = fractal::Mandelbrot::scaleCoordinate(c.y, HEIGHT);
+        std::pair<double, double> coords = zooms.toZoom(c);
         
-        int iterations = m.computeIterations(xFractal, yFractal);
+        int iterations = m.computeIterations(coords.first, coords.second);
         iterationsMap.insert(std::make_pair(bitmap::Coordinate(c.x, c.y), iterations));
         histogram.incrementValueFor(iterations);
     });
@@ -66,7 +73,7 @@ void desenhaUmaBolaMoiseis() {
     for (int i = 0; i < 360; ++i) {
         int y = (cos(M_PI * i /180) * RADIUS) + RADIUS;
         int x = (sin(M_PI * i /180) * RADIUS) + RADIUS;
-        bola.setPixel(x, y, 255, 255, 255);
+        bola.setPixel(x, y, bitmap::RGB(255, 255, 255));
     }
     
     bola.writeToFile("desenha_uma_bola.bmp");
