@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <memory>
 #include <unordered_map>
+
 #include "Bitmap.hpp"
 #include "Histogram.hpp"
 #include "Coordinate.hpp"

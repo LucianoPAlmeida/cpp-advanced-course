@@ -6,9 +6,10 @@
 //  Copyright © 2019 Luciano Almeida. All rights reserved.
 //
 
-#include "Bitmap.hpp"
 #include <iostream>
 #include <fstream>
+
+#include "Bitmap.hpp"
 
 #define BYTES_PER_PIXEL 3
 

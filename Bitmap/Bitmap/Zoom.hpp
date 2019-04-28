@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+
 #include "Coordinate.hpp"
 
 namespace fractal {

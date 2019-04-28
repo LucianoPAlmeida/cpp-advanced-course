@@ -10,6 +10,7 @@
 #include <memory>
 #include <math.h>
 #include <unordered_map>
+
 #include "BitmapHeaderFile.h"
 #include "BitmapInfoHeader.h"
 #include "Bitmap.hpp"
