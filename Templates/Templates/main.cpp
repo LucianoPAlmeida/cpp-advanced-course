@@ -31,6 +31,7 @@ void test() {
 bool matches(std::string s)  {
     return s.size() != 3;
 }
+
 template <class Iterator, class T>
 int count_if(Iterator begin, Iterator end, bool (*matches)(T))
 {
@@ -53,6 +54,7 @@ int main(int argc, const char * argv[]) {
     // Function pointers
     void (*pF)() = &test;
     void (*tpF)(int) = &print;
+    std::function<void (std::string)> fn = &matches;
     
     pF();
     tpF(56);
