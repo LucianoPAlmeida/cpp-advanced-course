@@ -73,5 +73,17 @@ int main(int argc, const char * argv[]) {
     auto tu = std::make_tuple(50, 23, std::string("Hue"));
     std::cout << "1: " << std::get<0>(tu) << ", 2: " << std::get<1>(tu) << ", 3: " << std::get<2>(tu) << std::endl;
     
+    std::cout << "Memcpy"<< std::endl;
+    
+    // Array initializer
+    const size_t size = 10;
+    std::unique_ptr<int []> a1(new int[size] { [0 ... size - 1] = 5 });
+    std::unique_ptr<int []> a2(new int[size] { [0 ... size - 1] = 0 });
+    
+    memcpy(a2.get(), a1.get(), size * sizeof(int));
+    
+    for (auto i = 0; i < size; ++i) {
+        std::cout << a1[i] << std::endl;
+    }
     return 0;
 }
