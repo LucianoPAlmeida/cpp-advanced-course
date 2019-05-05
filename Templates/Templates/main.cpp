@@ -69,5 +69,9 @@ int main(int argc, const char * argv[]) {
 
     std::cout << "Count: " << count << std::endl;
     
+    // Tuples
+    auto tu = std::make_tuple(50, 23, std::string("Hue"));
+    std::cout << "1: " << std::get<0>(tu) << ", 2: " << std::get<1>(tu) << ", 3: " << std::get<2>(tu) << std::endl;
+    
     return 0;
 }
