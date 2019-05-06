@@ -15,11 +15,13 @@
 
 namespace bitmap {
     
-    int Bitmap::getSize() const {
+    const int Bitmap::getSize() const {
         return m_width * m_height * BYTES_PER_PIXEL;
     }
     
-    Bitmap::Bitmap(int height, int width): m_height(height), m_width(width), m_pPixels(new uint8_t[getSize()]{0}){}
+    Bitmap::Bitmap(int height, int width): m_height(height), m_width(width), m_pPixels(new uint8_t[getSize()]) {
+        std::fill(m_pPixels.get(), m_pPixels.get() + getSize(), 0);
+    }
 
     void Bitmap::setPixel(int x, int y, RGB rgb) {
         auto pixels = m_pPixels.get();

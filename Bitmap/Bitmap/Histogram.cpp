@@ -9,7 +9,9 @@
 #include "Histogram.hpp"
 
 namespace fractal {
-    Histogram::Histogram(int size): m_values(new int[size]{0}), m_size(size) {}
+    Histogram::Histogram(int size): m_values(new int[size]), m_size(size) {
+        std::fill(m_values.get(), m_values.get() + size, 0);
+    }
     
     void Histogram::incrementValueFor(int iteration) {
         if (iteration < m_size)

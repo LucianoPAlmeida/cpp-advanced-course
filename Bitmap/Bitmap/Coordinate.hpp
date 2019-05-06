@@ -24,9 +24,7 @@ namespace bitmap {
 template<>
 struct std::hash<bitmap::Coordinate> {
     std::size_t operator()(const bitmap::Coordinate& k) const {
-        
-        return std::hash<int>()(k.x) ^ std::hash<int>()(k.y);
-        
+        return std::hash<int>()(k.x) ^ std::hash<int>()(k.y);        
     }
 };
 

@@ -9,7 +9,7 @@
 #ifndef Histogram_hpp
 #define Histogram_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include <memory>
 
 namespace fractal {

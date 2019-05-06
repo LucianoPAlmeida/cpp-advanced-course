@@ -25,7 +25,7 @@ private:
     std::unique_ptr<uint8_t[]> m_pPixels{nullptr};
     
     // Methods
-    int getSize() const;
+    const int getSize() const;
     bool writeToFile(std::string filename, BitmapInfoHeader infoHeader, BitmapHeaderFile headerFile);
 public:
     Bitmap(int height, int width);
