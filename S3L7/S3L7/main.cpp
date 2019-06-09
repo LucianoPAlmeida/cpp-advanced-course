@@ -9,7 +9,30 @@
 #include <iostream>
 #include <fstream>
 
+class Parent {
+public:
+    virtual std::string name() const { return "Parent"; }
+};
+
+class Child: public Parent {
+public:
+    std::string name() const { return "Child"; }
+};
+
+const Parent* get() {
+    return new Child();
+}
+
+
 int main(int argc, const char * argv[]) {
+    
+    auto p1 = get();
+    auto c1 = Child();
+    Parent* c2 = new Child();
+    
+    std::cout << "p1: " << p1->name() << std::endl;
+    std::cout << "c1: " << c1.name() << std::endl;
+    std::cout << "c2: " << c2->name() << std::endl;
     
     std::fstream f;
     f.open("./text.txt", std::fstream::app);
