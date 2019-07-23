@@ -40,6 +40,7 @@ void mandelbrot() {
     const int MAX_ITERATIONS = 1000;
     
     bitmap::Bitmap bm(HEIGHT, WIDTH);
+    
     fractal::Mandelbrot m(MAX_ITERATIONS);
     fractal::Histogram histogram(MAX_ITERATIONS);
     std::unordered_map<bitmap::Coordinate, int> iterationsMap;
