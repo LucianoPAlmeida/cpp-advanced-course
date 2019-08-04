@@ -240,6 +240,7 @@
 		B2BEC1652247E73A007D2BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43Z9WE284C;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -249,6 +250,7 @@
 		B2BEC1662247E73A007D2BB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43Z9WE284C;
 				PRODUCT_NAME = "$(TARGET_NAME)";
