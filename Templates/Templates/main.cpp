@@ -90,8 +90,16 @@ R sum(T... args) {
   return (args + ...);
 }
 
+// Cooool feature \o/
+class A {};
 
+class B {
+public:
+  B() {}
+  B(A SL) {}
+};
 
+void testFunction(B SR) {}
 
 int main(int argc, const char * argv[]) {
   Test<int> t;
@@ -100,6 +108,11 @@ int main(int argc, const char * argv[]) {
   
   print(1);
   
+  A sl;
+  // Since B has a constructor that takes a value of type A C++,
+  // compiler implicitly makes the call for it.
+  // So we a are able to pass A directly to a function that takes B.
+  testFunction(sl);
   
   // Function pointers
   void (*pF)() = &test;
