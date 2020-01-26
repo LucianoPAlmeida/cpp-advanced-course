@@ -36,8 +36,12 @@ struct std::hash<T> {
     }
 };
 
+int f() {
+  return 5;
+}
+  
 int main(int argc, const char * argv[]) {
-    
+
     //
     std::vector<double> n(20, 1);
     
@@ -54,6 +58,8 @@ int main(int argc, const char * argv[]) {
         }
         n.push_back(i);
     }
+  
+    
     
     n.resize(100);
     n.shrink_to_fit();

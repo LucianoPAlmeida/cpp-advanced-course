@@ -55,9 +55,15 @@ void call(T && ref) {
     check(static_cast<T>(ref));
 }
 
-int add(int a, int b) {
-    return a + b;
+template <typename T, typename C>
+decltype(auto) add(T a, C b) {
+  return a + b;
 }
+
+
+//int add(int a, int b) {
+//    return a + b;
+//}
 
 int main(int argc, const char * argv[]) {
     // S08 L39 Decltype, typeid and name mangling.
@@ -65,10 +71,12 @@ int main(int argc, const char * argv[]) {
     std::cout << typeid(s).name() << std::endl;
     
     decltype(s) o = "da";
-    std::cout << typeid(o).name() << std::endl;
+    std::cout << "typeid(o).name() = " << typeid(o).name() << std::endl;
 
     // S08 L40 The Auto keyword
     auto i = 9;
+  
+    auto r = add(1, (float)1.0);
     
     std::cout << test(i, 5) << std::endl;
     
