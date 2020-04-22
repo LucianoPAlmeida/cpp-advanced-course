@@ -38,6 +38,18 @@ int main(int argc, const char * argv[]) {
   dump(v.a);
   dump(v.b);
 
+  // Mutable
   
+  int x = 0;
+  
+  auto f = [=]() mutable {
+    x++;
+    std::cout << "x in => " << x << std::endl;
+  };
+  
+  f();
+  
+  std::cout << "x out => " << x << std::endl;
+
   return 0;
 }
