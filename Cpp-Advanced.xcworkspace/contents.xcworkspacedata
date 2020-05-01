@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Atomic/Atomic.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Unions/Unions.xcodeproj">
    </FileRef>
    <FileRef
