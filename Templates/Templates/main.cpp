@@ -88,6 +88,23 @@ public:
 
 void testFunction(B SR) {}
 
+
+// TMP
+template <int n>
+struct incremented {
+  static const int value = n + 1;
+};
+
+template <unsigned int n>
+struct factorial {
+  static const int value = n * factorial<n - 1>::value;
+};
+
+template <>
+struct factorial<0> {
+  static const int value = 1;
+};
+
 int main(int argc, const char *argv[]) {
   Test<int> t;
   t.i = 2;
@@ -161,5 +178,11 @@ int main(int argc, const char *argv[]) {
   std::sort(vp.begin(), vp.end(),
             [](const auto &p1, const auto &p2) { return p1.x > p2.x; });
 
+  // TMP
+  std::cout << incremented<1>::value << std::endl;
+  std::cout << "factorial: " << factorial<5>::value << std::endl;
+  
+  static_assert(factorial<5>::value == 120, "compile-time check");
+  
   return 0;
 }
