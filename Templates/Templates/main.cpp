@@ -8,6 +8,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <type_traits>
 #include <vector>
 
 template <class T> class Test {
@@ -105,6 +106,18 @@ struct factorial<0> {
   static const int value = 1;
 };
 
+template <typename T, typename std::enable_if<std::is_arithmetic<T>::value,
+                                              bool>::type = true>
+T addArithmetic(T a, T b) {
+  return a + b;
+}
+
+template <typename T, typename std::enable_if<std::is_arithmetic<T>::value,
+                                              bool>::type = true>
+double divide(T a, T b) {
+  return a / (double)b;
+}
+
 int main(int argc, const char *argv[]) {
   Test<int> t;
   t.i = 2;
@@ -183,6 +196,19 @@ int main(int argc, const char *argv[]) {
   std::cout << "factorial: " << factorial<5>::value << std::endl;
   
   static_assert(factorial<5>::value == 120, "compile-time check");
-  
+
+  // Constraining templates
+  // std::enable_if
+  uint8_t a = 3;
+  uint8_t b = 5;
+  auto r = addArithmetic(
+      a, b); // Ok uint8_t satisfy the std::is_integral constraint.
+  // auto r1 = addArithmetic("a", "b"); //Invalid no matching call requirement
+  // 'std::is_arithmetic<const char *>::value' was not satisfied [with T = const
+  // char *]
+  auto rd = divide(1, 2);
+  std::cout << "tmpl: " << r << std::endl;
+  std::cout << "tmpl decltype: " << rd << std::endl;
+
   return 0;
 }

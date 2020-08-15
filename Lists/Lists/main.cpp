@@ -46,6 +46,14 @@ void dump(Iterator begin, Iterator end) {
   std::cout << std::endl;
 }
 
+class CCC {
+protected:
+  std::vector<std::string> v = {"a", "c"};
+
+public:
+  const std::vector<std::string> &getV() { return v; }
+};
+
 int main(int argc, const char * argv[]) {
   
   //
